@@ -20,7 +20,7 @@ namespace Estimador
     public partial class Input : Form
     {
         public int PuntosFuncionTotal = 0;
-        public double costo_total = 0;
+        public double cpm_total = 0;
         //public double kldc = 0;
         public double kldc = 0;
         public string tipoProyecto = "";
@@ -38,13 +38,20 @@ namespace Estimador
         /// </Pesos por estapas>
 
         ///</Estimacion Final>
-        public double cpmFinal = 0;
+        public double costo_total = 0;
         public double esfuerzoFinal = 0;
         public double tiempoFinal = 0;
         /// </Estimacion Final>
-        public Input()
+        private bool optionCocomo;
+
+        public Input(bool optionCocomo)
         {
             InitializeComponent();
+            this.optionCocomo = optionCocomo;
+
+            // Controlar la visibilidad del groupBox4 basado en el valor de optionCocomo
+            groupBox4.Visible = !optionCocomo;
+
             // Lista de opciones
             string[] opciones = { "muy_bajo", "bajo", "nominal", "alto", "muy_alto", "extra_alto" };
 
@@ -664,14 +671,21 @@ namespace Estimador
         }
 
         private void button2_Click(object sender, EventArgs e)
+
         {
+            /*
+            double inicio_costo = TryParseOrDefault(textBox1.Text) * peso_Esfuerzo_Inicio * esfuerzoFinal;
+            double elaboracion_costo = TryParseOrDefault(textBox2.Text) * peso_Esfuerzo_Elaboracion * esfuerzoFinal;
+            double contruccion_costo = TryParseOrDefault(textBox18.Text) * peso_Esfuerzo_Construccion * esfuerzoFinal;
+            double transicion_costo = TryParseOrDefault(textBox19.Text) * peso_Esfuerzo_Transicion * esfuerzoFinal;
+            */
             double inicio_costo = TryParseOrDefault(textBox1.Text) * peso_Esfuerzo_Inicio;
             double elaboracion_costo = TryParseOrDefault(textBox2.Text) * peso_Esfuerzo_Elaboracion;
             double contruccion_costo = TryParseOrDefault(textBox18.Text) * peso_Esfuerzo_Construccion;
             double transicion_costo = TryParseOrDefault(textBox19.Text) * peso_Esfuerzo_Transicion;
 
-            costo_total = inicio_costo + elaboracion_costo + contruccion_costo + transicion_costo;
-            //MessageBox.Show($"Total Coste: {costo_total}");
+            cpm_total = inicio_costo + elaboracion_costo + contruccion_costo + transicion_costo;
+            MessageBox.Show($"Total Coste: {cpm_total}");
 
             if (tipoProyecto == "organico")
             {
@@ -679,8 +693,8 @@ namespace Estimador
                 totalEsfuerzo_txt.Text = Math.Round(esfuerzoFinal, 2).ToString("F2");
                 tiempoFinal = 2.5f * Math.Pow(esfuerzoFinal, 0.38);
                 totalTdesarrollo_txt.Text = Math.Round(tiempoFinal, 2).ToString("F2");
-                cpmFinal = esfuerzoFinal * costo_total;
-                totalCpm_txt.Text = Math.Round(cpmFinal, 2).ToString("F2");
+                costo_total = esfuerzoFinal * cpm_total;
+                totalCpm_txt.Text = Math.Round(costo_total, 2).ToString("F2");
             }
 
             if (tipoProyecto == "moderado")
@@ -689,8 +703,8 @@ namespace Estimador
                 totalEsfuerzo_txt.Text = Math.Round(esfuerzoFinal, 2).ToString("F2");
                 tiempoFinal = 2.5f * Math.Pow(esfuerzoFinal, 0.35);
                 totalTdesarrollo_txt.Text = Math.Round(tiempoFinal, 2).ToString("F2");
-                cpmFinal = esfuerzoFinal * costo_total;
-                totalCpm_txt.Text = Math.Round(cpmFinal, 2).ToString("F2");
+                costo_total = esfuerzoFinal * cpm_total;
+                totalCpm_txt.Text = Math.Round(costo_total, 2).ToString("F2");
             }
 
             if (tipoProyecto == "embebido")
@@ -699,8 +713,8 @@ namespace Estimador
                 totalEsfuerzo_txt.Text = Math.Round(esfuerzoFinal, 2).ToString("F2");
                 tiempoFinal = 2.5f * Math.Pow(esfuerzoFinal, 0.32);
                 totalTdesarrollo_txt.Text = Math.Round(tiempoFinal, 2).ToString("F2");
-                cpmFinal = esfuerzoFinal * costo_total;
-                totalCpm_txt.Text = Math.Round(cpmFinal, 2).ToString("F2");
+                costo_total = esfuerzoFinal * cpm_total;
+                totalCpm_txt.Text = Math.Round(costo_total, 2).ToString("F2");
             }
 
             // esfuerzo por fases
@@ -716,10 +730,16 @@ namespace Estimador
             transicion_Tdesarrollo_txt.Text = Math.Round(tiempoFinal * peso_Tiempo_Transicion, 2).ToString("F2");
 
             // costo por fases
-            inicio_Cpm_txt.Text = Math.Round(inicio_costo, 2).ToString("F2");
-            elaboracion_Cpm_txt.Text = Math.Round(elaboracion_costo, 2).ToString("F2");
-            construccion_Cpm_txt.Text = Math.Round(contruccion_costo, 2).ToString("F2");
-            transicion_Cpm_txt.Text = Math.Round(transicion_costo, 2).ToString("F2");
+
+            double costoFinalInicio = costo_total * peso_Esfuerzo_Inicio;
+            double costoFinalElaboracion = costo_total * peso_Esfuerzo_Elaboracion;
+            double costoFinalConstruccion = costo_total * peso_Esfuerzo_Construccion;
+            double costoFinalTransicion = costo_total * peso_Esfuerzo_Transicion;
+
+            inicio_Cpm_txt.Text = Math.Round(costoFinalInicio, 2).ToString("F2");
+            elaboracion_Cpm_txt.Text = Math.Round(costoFinalElaboracion, 2).ToString("F2");
+            construccion_Cpm_txt.Text = Math.Round(costoFinalConstruccion, 2).ToString("F2");
+            transicion_Cpm_txt.Text = Math.Round(costoFinalTransicion, 2).ToString("F2");
 
 
         }
@@ -865,6 +885,24 @@ namespace Estimador
         private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Input_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void otro_chb_CheckedChanged(object sender, EventArgs e)
+        {
+            ///
+            //lenguaje_cbb
+            // acabar
+            ///
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Estimador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c6fdb32f82757735c85f41c5d8d2ba3221ee307")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2593f167cc37155107e8af3dcb47561ea5592c59")]
 [assembly: System.Reflection.AssemblyProductAttribute("Estimador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Estimador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

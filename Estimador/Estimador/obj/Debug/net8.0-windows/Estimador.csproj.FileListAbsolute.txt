@@ -78,3 +78,5 @@ C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\bin\Debug\net8.0-win
 C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\bin\Debug\net8.0-windows\Estimador.pdb
 C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\obj\Debug\net8.0-windows\Estimador.genruntimeconfig.cache
 C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\obj\Debug\net8.0-windows\ref\Estimador.dll
+C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\obj\Debug\net8.0-windows\Estimador.UseCase.resources
+C:\Users\alber\Documents\GitHub\C-Sharp\Estimador\Estimador\obj\Debug\net8.0-windows\Estimador.sourcelink.json

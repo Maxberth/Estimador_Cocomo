@@ -35,6 +35,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
+            UseCase_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)SplitContainer).BeginInit();
             SplitContainer.Panel1.SuspendLayout();
             SplitContainer.Panel2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // SplitContainer.Panel1
             // 
+            SplitContainer.Panel1.Controls.Add(UseCase_btn);
             SplitContainer.Panel1.Controls.Add(COCOMOII_btn);
             SplitContainer.Panel1.Controls.Add(label1);
             SplitContainer.Panel1.Controls.Add(COCOMO81_btn);
@@ -99,7 +101,6 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 0, 1);
@@ -108,15 +109,16 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(351, 290);
+            tableLayoutPanel1.Size = new Size(351, 224);
             tableLayoutPanel1.TabIndex = 4;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             flowLayoutPanel2.AutoSize = true;
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel2.Location = new Point(175, 273);
+            flowLayoutPanel2.Location = new Point(175, 207);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(0, 14);
             flowLayoutPanel2.TabIndex = 3;
@@ -134,6 +136,16 @@
             pictureBox1.TabStop = false;
             pictureBox1.WaitOnLoad = true;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // UseCase_btn
+            // 
+            UseCase_btn.Location = new Point(106, 383);
+            UseCase_btn.Name = "UseCase_btn";
+            UseCase_btn.Size = new Size(153, 81);
+            UseCase_btn.TabIndex = 12;
+            UseCase_btn.Text = "Puntos de Casos de Uso";
+            UseCase_btn.UseVisualStyleBackColor = true;
+            UseCase_btn.Click += UseCase_btn_Click;
             // 
             // ModelSelect
             // 
@@ -163,5 +175,6 @@
         private PictureBox pictureBox1;
         private Button COCOMOII_btn;
         private Button COCOMO81_btn;
+        private Button UseCase_btn;
     }
 }

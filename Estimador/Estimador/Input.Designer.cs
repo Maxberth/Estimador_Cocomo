@@ -726,6 +726,7 @@
             otro_chb.TabIndex = 7;
             otro_chb.Text = "Otro";
             otro_chb.UseVisualStyleBackColor = true;
+            otro_chb.CheckedChanged += otro_chb_CheckedChanged;
             // 
             // lenguaje_cbb
             // 
@@ -749,6 +750,7 @@
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Conductores de Coste";
+            groupBox4.Enter += groupBox4_Enter;
             // 
             // flowLayoutPanel2
             // 
@@ -1426,9 +1428,9 @@
             label56.Font = new Font("Segoe UI", 7.8F);
             label56.Location = new Point(23, 54);
             label56.Name = "label56";
-            label56.Size = new Size(123, 17);
+            label56.Size = new Size(74, 17);
             label56.TabIndex = 0;
-            label56.Text = "Costo persona-mes";
+            label56.Text = "Costo Total";
             label56.Click += label56_Click;
             // 
             // gbEsti_fases_tiempo_desarrollo
@@ -1867,6 +1869,7 @@
             Controls.Add(tabControl1);
             Name = "Input";
             Text = "Input";
+            Load += Input_Load_1;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
