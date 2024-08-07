@@ -24,7 +24,7 @@ namespace Estimador
         //public double kldc = 0;
         public double kldc = 0;
         public string tipoProyecto = "";
-        public double conductor_total = 0;
+        public double conductor_total = 1;
         /// </Peso por estapas>
         public double peso_Esfuerzo_Inicio = 0.05f;
         public double peso_Esfuerzo_Elaboracion = 0.2f;
@@ -903,6 +903,11 @@ namespace Estimador
             //lenguaje_cbb
             // acabar
             ///
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

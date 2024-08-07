@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Estimator</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Enlazar el favicon -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 4rem);
+            /* Altura del header */
+            overflow-y: auto;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-content img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-blue-700">
+        <div class="px-5 py-7 header-content">
+            <img src="android-chrome-192x192.png" alt="Ícono">
+            <h1 class="text-white">
+                <span class="text-xl md:text-3xl leading-4 md:leading-6 font-semibold">
+                    Simply Estimator
+                </span>
+                <span class="text-xmd">
+                    Ayuda en línea
+                </span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <main>
+        <!-- Barra de navegación lateral -->
+        <nav class="w-64 bg-gray-700 text-white p-4 h-screen">
+            <h2 class="text-lg font-bold mb-4">Navegación</h2>
+            <ul class="space-y-2">
+                <li><a href="#section1" class="block py-2 px-4 hover:bg-gray-900 rounded">Cocomo 81 Intermedio</a></li>
+                <li><a href="#section2" class="block py-2 px-4 hover:bg-gray-900 rounded">Cocomo II Post
+                        Arquitectura</a></li>
+                <li><a href="#section3" class="block py-2 px-4 hover:bg-gray-900 rounded">Puntos de Casos de Uso</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 p-4">
+
+            <section id="welcome" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">Bienvenido(a)</h2>
+                <p>Bienvenido(a) a Simply Estimator, una herramienta diseñada para facilitar la estimación de proyectos
+                    de software utilizando los modelos COCOMO-81 Intermedio y COCOMO II Post Arquitectura, así como el
+                    modelo basado en puntos de casos de uso. </p>
+            </section>
+
+            <!---********************SECCIÓN 1****************************-->
+
+            <section id="section1" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">COCOMO-81 Intermedio</h2>
+
+                <!-- Descripción del modelo -->
+                <h3 class="text-lg font-semibold mb-2">Descripción del modelo</h3>
+                <p>El modelo COCOMO-81 Intermedio se utiliza para estimar el esfuerzo de desarrollo de software basado
+                    en el modo de desarrollo (orgánico, semi-desarrollado o embebido). Los usuarios deben seleccionar el
+                    modo de desarrollo y luego ingresar los datos de tamaño del proyecto en Kilo Líneas de Código (KLDC)
+                    o puntos de función, que se convertirán automáticamente a KLDC.</p>
+
+                <!-- Instrucciones para seleccionar conductores de coste -->
+                <h3 class="text-lg font-semibold mb-2">Instrucciones para seleccionar conductores de coste</h3>
+                <p>A continuación se presenta una tabla con los conductores de coste, donde se puede seleccionar el
+                    valor apropiado según el contexto del proyecto:</p>
+
+                <table class="min-w-full bg-white border border-gray-200 mb-4">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Abreviación</th>
+                            <th class="py-2 px-4 border-b">Nombre Completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RSS</td>
+                            <td class="py-2 px-4 border-b">Required Software Reliability</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">TBD</td>
+                            <td class="py-2 px-4 border-b">To Be Defined</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CPR</td>
+                            <td class="py-2 px-4 border-b">Critical Performance Requirement</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RTE</td>
+                            <td class="py-2 px-4 border-b">Real-Time Environment</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RMP</td>
+                            <td class="py-2 px-4 border-b">Resource Management Plan</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">VMC</td>
+                            <td class="py-2 px-4 border-b">Virtual Machine Complexity</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">TRC</td>
+                            <td class="py-2 px-4 border-b">Technical Risk</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CAN</td>
+                            <td class="py-2 px-4 border-b">Capability and Expertise</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">EAN</td>
+                            <td class="py-2 px-4 border-b">Experience and Knowledge</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CPRO</td>
+                            <td class="py-2 px-4 border-b">Computer Resources</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">ESO</td>
+                            <td class="py-2 px-4 border-b">External Support</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">ELP</td>
+                            <td class="py-2 px-4 border-b">Expertise Level of Personnel</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">UTP</td>
+                            <td class="py-2 px-4 border-b">User Training and Preparation</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">UHS</td>
+                            <td class="py-2 px-4 border-b">User Health and Safety</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RPL</td>
+                            <td class="py-2 px-4 border-b">Reusability of Parts and Libraries</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- Cómo introducir costos hombre-mes por etapas -->
+                <h3 class="text-lg font-semibold mb-2">Cómo introducir costos hombre-mes por etapas</h3>
+                <p>Para introducir los costos hombre-mes por etapas, se deben seguir las siguientes fases del proyecto:
+                    Inicio, Elaboración, Construcción y Transición. Ingrese el costo hombre-mes para cada una de estas
+                    fases:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Inicio:</strong> Introduzca el costo hombre-mes para la fase de inicio.</li>
+                    <li><strong>Elaboración:</strong> Introduzca el costo hombre-mes para la fase de elaboración.</li>
+                    <li><strong>Construcción:</strong> Introduzca el costo hombre-mes para la fase de construcción.</li>
+                    <li><strong>Transición:</strong> Introduzca el costo hombre-mes para la fase de transición.</li>
+                </ul>
+            </section>
+
+
+            <!---********************SECCIÓN 2****************************-->
+
+            <section id="section2" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">COCOMO II Post Arquitectura</h2>
+
+                <!-- Descripción del modelo -->
+                <h3 class="text-lg font-semibold mb-2">Descripción del modelo</h3>
+                <p>El modelo COCOMO II Post Arquitectura se utiliza para estimar el esfuerzo de desarrollo de software
+                    en la fase de post-arquitectura del ciclo de vida del proyecto. Los usuarios deben ingresar los
+                    datos de tamaño del proyecto en Kilo Líneas de Código (KLDC) o puntos de función, que se convertirán
+                    automáticamente a KLDC.</p>
+
+                <!-- Instrucciones para seleccionar conductores de coste -->
+                <h3 class="text-lg font-semibold mb-2">Instrucciones para seleccionar conductores de coste</h3>
+                <p>A continuación se presenta una tabla con los conductores de coste, donde se puede seleccionar el
+                    valor apropiado según el contexto del proyecto:</p>
+                <table class="min-w-full bg-white border border-gray-200 mb-4">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Abreviación</th>
+                            <th class="py-2 px-4 border-b">Nombre Completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RSS</td>
+                            <td class="py-2 px-4 border-b">Required Software Reliability</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">TBD</td>
+                            <td class="py-2 px-4 border-b">Database Size</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CPR</td>
+                            <td class="py-2 px-4 border-b">Product Complexity</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RUSE</td>
+                            <td class="py-2 px-4 border-b">Software Reusability</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">DOC</td>
+                            <td class="py-2 px-4 border-b">Documentation</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RTE</td>
+                            <td class="py-2 px-4 border-b">Platform (Computer)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RMP</td>
+                            <td class="py-2 px-4 border-b">Maintenance</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">VMC</td>
+                            <td class="py-2 px-4 border-b">Virtual Machine Compatibility</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CAN</td>
+                            <td class="py-2 px-4 border-b">Capability</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">EAPL</td>
+                            <td class="py-2 px-4 border-b">Experience with Applications</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CPRO</td>
+                            <td class="py-2 px-4 border-b">Capability of Programmers</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">CPER</td>
+                            <td class="py-2 px-4 border-b">Capability of Programmers</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">EPLA</td>
+                            <td class="py-2 px-4 border-b">Experience with Languages</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">ELP</td>
+                            <td class="py-2 px-4 border-b">Experience Level of Programmers</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">UHS</td>
+                            <td class="py-2 px-4 border-b">User Interface</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RPL</td>
+                            <td class="py-2 px-4 border-b">Risk Management</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">DMS</td>
+                            <td class="py-2 px-4 border-b">Development Methodology</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+                <!-- Instrucciones para seleccionar conductores de escala -->
+                <h3 class="text-lg font-semibold mb-2">Instrucciones para seleccionar conductores de escala</h3>
+                <p>A continuación se presenta una tabla con los conductores de escala, donde se puede seleccionar el
+                    valor apropiado según el contexto del proyecto:</p>
+                <table class="min-w-full bg-white border border-gray-200 mb-4">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Abreviación</th>
+                            <th class="py-2 px-4 border-b">Nombre Completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">PREC</td>
+                            <td class="py-2 px-4 border-b">Precedenteness</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">FLEX</td>
+                            <td class="py-2 px-4 border-b">Development Flexibility</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">RESL</td>
+                            <td class="py-2 px-4 border-b">Architecture and Risk Resolution</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">TEAM</td>
+                            <td class="py-2 px-4 border-b">Team Cohesion</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">PMAT</td>
+                            <td class="py-2 px-4 border-b">Process Maturity</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Cómo introducir costos hombre-mes por etapas -->
+                <h3 class="text-lg font-semibold mb-2">Cómo introducir costos hombre-mes por etapas</h3>
+                <p>Para introducir los costos hombre-mes por etapas, se deben seguir las siguientes fases del proyecto:
+                    Inicio, Elaboración, Construcción y Transición. Ingrese el costo hombre-mes para cada una de estas
+                    fases:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Inicio:</strong> Introduzca el costo hombre-mes para la fase de inicio.</li>
+                    <li><strong>Elaboración:</strong> Introduzca el costo hombre-mes para la fase de elaboración.</li>
+                    <li><strong>Construcción:</strong> Introduzca el costo hombre-mes para la fase de construcción.</li>
+                    <li><strong>Transición:</strong> Introduzca el costo hombre-mes para la fase de transición.</li>
+                </ul>
+            </section>
+
+            <!---********************SECCIÓN 3****************************-->
+
+            <!-- Descripción del Modelo Puntos de Casos de Uso -->
+            <section id="section3" class="mb-4">
+                <h2 class="text-xl font-bold mb-2">Puntos de Casos de Uso</h2>
+
+                <h3 class="text-lg font-semibold mb-2">Qué son los puntos de casos de uso</h3>
+                <p>Los puntos de casos de uso (Use Case Points, UCP) son una métrica utilizada para estimar el tamaño y
+                    la complejidad de un proyecto de software basándose en los casos de uso del sistema. Esta métrica
+                    ayuda a evaluar el esfuerzo necesario para desarrollar el sistema según los requerimientos definidos
+                    en los casos de uso.</p>
+
+                <h3 class="text-lg font-semibold mb-2">Cómo se calculan los puntos de casos de uso sin ajustar (UUCP)
+                </h3>
+                <p>Para calcular los puntos de casos de uso sin ajustar (Unadjusted Use Case Points, UUCP), se siguen
+                    los siguientes pasos:</p>
+                <ol class="list-decimal ml-5 mb-4">
+                    <li><strong>Identificar los casos de uso:</strong> Contar el número de casos de uso y clasificarlos
+                        según su complejidad (simple, media, compleja).</li>
+                    <li><strong>Asignar pesos:</strong> Asignar un peso a cada caso de uso basado en su complejidad. Los
+                        casos de uso simples tienen un peso menor, mientras que los complejos tienen un peso mayor.</li>
+                    <li><strong>Calcular los puntos de casos de uso no ajustados:</strong> Multiplicar el número de
+                        casos de uso por su peso y sumar los resultados para obtener el total de UUCP.</li>
+                </ol>
+
+                <h3 class="text-lg font-semibold mb-2">Explicación de los factores</h3>
+                <p>Los factores de complejidad técnica y los factores de ambiente son ajustes utilizados para adaptar
+                    los puntos de casos de uso no ajustados (UUCP) a las condiciones específicas del proyecto. Los
+                    factores de complejidad técnica reflejan la dificultad técnica del proyecto, mientras que los
+                    factores de ambiente consideran aspectos como la experiencia del equipo y el soporte disponible.</p>
+
+                <h3 class="text-lg font-semibold mb-2">Cómo ajustar los puntos de casos de uso con estos factores</h3>
+                <p>Para ajustar los puntos de casos de uso con estos factores, se sigue el siguiente procedimiento:</p>
+                <ol class="list-decimal ml-5 mb-4">
+                    <li><strong>Identificar los factores de complejidad técnica y de ambiente :</strong> Evaluar y
+                        asignar valores a estos fatores según las características del proyecto.</li>
+                    <li><strong>Aplicar los factores de complejidad técnica y de ambiente:</strong> Ingresar los factores identificados para ajustar los
+                        UUCP. El resultado de obtiene multiplicando el UUCP por un factor de ajuste calculado a partir de los
+                        factores de complejidad técnica y ambiente.</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

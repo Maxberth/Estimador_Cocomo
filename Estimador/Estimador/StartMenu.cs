@@ -76,7 +76,41 @@ namespace Estimador
             nuevaVentana.ShowDialog();
         }
 
+        private void StartMenu_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void ayudaEnLineaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Pagina Web Hecha por Mirella Gamboa
+            //https://github.com/gamboaMirella/helpToEstimator
+            try
+            {
+                // Construye la ruta completa del archivo HTML
+                string rutaCompletaHtml = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName, "Resources", "index.html");
+
+                if (File.Exists(rutaCompletaHtml))
+                {
+                    // Usa Process.Start para abrir el archivo HTML en el navegador
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = rutaCompletaHtml,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("El archivo HTML no se encuentra en la ruta especificada.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Maneja el error de apertura del archivo HTML
+                MessageBox.Show("Error al abrir el archivo HTML: " + ex.Message);
+            }
+
+        }
 
     }
 }

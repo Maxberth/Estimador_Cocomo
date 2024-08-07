@@ -125,6 +125,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackgroundImageLayout = ImageLayout.Center;
+            tabPage1.BorderStyle = BorderStyle.FixedSingle;
             tabPage1.Controls.Add(label34);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(groupBox4);
@@ -718,6 +720,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackgroundImageLayout = ImageLayout.Center;
+            tabPage2.BorderStyle = BorderStyle.FixedSingle;
             tabPage2.Controls.Add(label33);
             tabPage2.Controls.Add(groupBox5);
             tabPage2.Location = new Point(4, 29);

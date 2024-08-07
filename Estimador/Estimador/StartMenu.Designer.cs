@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
             menuStrip1 = new MenuStrip();
             ArchivoToolStripMenuItem = new ToolStripMenuItem();
             nuevoToolStripMenuItem = new ToolStripMenuItem();
@@ -145,19 +146,20 @@
             // ayudaEnLineaToolStripMenuItem
             // 
             ayudaEnLineaToolStripMenuItem.Name = "ayudaEnLineaToolStripMenuItem";
-            ayudaEnLineaToolStripMenuItem.Size = new Size(214, 26);
+            ayudaEnLineaToolStripMenuItem.Size = new Size(224, 26);
             ayudaEnLineaToolStripMenuItem.Text = "Ayuda en linea";
+            ayudaEnLineaToolStripMenuItem.Click += ayudaEnLineaToolStripMenuItem_Click;
             // 
             // manualDeUsuarioToolStripMenuItem
             // 
             manualDeUsuarioToolStripMenuItem.Name = "manualDeUsuarioToolStripMenuItem";
-            manualDeUsuarioToolStripMenuItem.Size = new Size(214, 26);
+            manualDeUsuarioToolStripMenuItem.Size = new Size(224, 26);
             manualDeUsuarioToolStripMenuItem.Text = "Manual de usuario";
             // 
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            acercaDeToolStripMenuItem.Size = new Size(214, 26);
+            acercaDeToolStripMenuItem.Size = new Size(224, 26);
             acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // StartMenu
@@ -166,10 +168,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1074, 633);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "StartMenu";
             Text = "Estimador";
+            Load += StartMenu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             SplitContainer = new SplitContainer();
+            UseCase_btn = new Button();
             COCOMOII_btn = new Button();
             label1 = new Label();
             COCOMO81_btn = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
-            UseCase_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)SplitContainer).BeginInit();
             SplitContainer.Panel1.SuspendLayout();
             SplitContainer.Panel2.SuspendLayout();
@@ -68,6 +68,16 @@
             SplitContainer.Size = new Size(1074, 620);
             SplitContainer.SplitterDistance = 357;
             SplitContainer.TabIndex = 3;
+            // 
+            // UseCase_btn
+            // 
+            UseCase_btn.Location = new Point(105, 323);
+            UseCase_btn.Name = "UseCase_btn";
+            UseCase_btn.Size = new Size(155, 62);
+            UseCase_btn.TabIndex = 12;
+            UseCase_btn.Text = "Puntos de Casos de Uso";
+            UseCase_btn.UseVisualStyleBackColor = true;
+            UseCase_btn.Click += UseCase_btn_Click;
             // 
             // COCOMOII_btn
             // 
@@ -136,16 +146,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.WaitOnLoad = true;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // UseCase_btn
-            // 
-            UseCase_btn.Location = new Point(106, 383);
-            UseCase_btn.Name = "UseCase_btn";
-            UseCase_btn.Size = new Size(153, 81);
-            UseCase_btn.TabIndex = 12;
-            UseCase_btn.Text = "Puntos de Casos de Uso";
-            UseCase_btn.UseVisualStyleBackColor = true;
-            UseCase_btn.Click += UseCase_btn_Click;
             // 
             // ModelSelect
             // 

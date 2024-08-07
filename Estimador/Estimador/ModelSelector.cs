@@ -44,7 +44,13 @@ namespace Estimador
             nuevaVentana.Show();
             this.Close();*/
             OptionCocomo = true;
+            /*
             Input nuevaVentana = new Input(OptionCocomo);
+            nuevaVentana.MdiParent = this.MdiParent;
+            nuevaVentana.WindowState = FormWindowState.Maximized;
+            nuevaVentana.Show();
+            this.Close();*/
+            CocomoII nuevaVentana = new CocomoII();
             nuevaVentana.MdiParent = this.MdiParent;
             nuevaVentana.WindowState = FormWindowState.Maximized;
             nuevaVentana.Show();
