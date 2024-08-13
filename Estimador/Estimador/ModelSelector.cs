@@ -13,6 +13,8 @@ namespace Estimador
     public partial class ModelSelect : Form
     {
         public bool OptionCocomo { get; private set; }
+        public int ModeloSeleccionado { get; private set; }
+
 
         public ModelSelect()
         {
@@ -28,6 +30,17 @@ namespace Estimador
             nuevaVentana.Show();
             this.Close();*/
             OptionCocomo = false;
+            ModeloSeleccionado = 0;
+
+            // Abrir la ventana StartMenu con el valor de ModeloSeleccionado
+            StartMenu nuevaVentanaStartMenu = new StartMenu(ModeloSeleccionado);
+            //Program(ModeloSeleccionado);
+
+            //nuevaVentanaStartMenu.MdiParent = this.MdiParent;
+            // nuevaVentanaStartMenu.WindowState = FormWindowState.Maximized;
+            // nuevaVentanaStartMenu.Show();
+
+
             Input nuevaVentana = new Input(OptionCocomo);
             nuevaVentana.MdiParent = this.MdiParent;
             nuevaVentana.WindowState = FormWindowState.Maximized;
@@ -44,12 +57,20 @@ namespace Estimador
             nuevaVentana.Show();
             this.Close();*/
             OptionCocomo = true;
+            ModeloSeleccionado |= 1;
             /*
             Input nuevaVentana = new Input(OptionCocomo);
             nuevaVentana.MdiParent = this.MdiParent;
             nuevaVentana.WindowState = FormWindowState.Maximized;
             nuevaVentana.Show();
             this.Close();*/
+            // Abrir la ventana StartMenu con el valor de ModeloSeleccionado
+            StartMenu nuevaVentanaStartMenu = new StartMenu(ModeloSeleccionado);
+            //nuevaVentanaStartMenu.MdiParent = this.MdiParent;
+            //nuevaVentanaStartMenu.WindowState = FormWindowState.Maximized;
+            //nuevaVentanaStartMenu.Show();
+
+
             CocomoII nuevaVentana = new CocomoII();
             nuevaVentana.MdiParent = this.MdiParent;
             nuevaVentana.WindowState = FormWindowState.Maximized;
@@ -69,8 +90,16 @@ namespace Estimador
 
         private void UseCase_btn_Click(object sender, EventArgs e)
         {
+            ModeloSeleccionado = 2;
             try
             {
+                // Abrir la ventana StartMenu con el valor de ModeloSeleccionado
+                StartMenu nuevaVentanaStartMenu = new StartMenu(ModeloSeleccionado);
+                //nuevaVentanaStartMenu.MdiParent = this.MdiParent;
+                //nuevaVentanaStartMenu.WindowState = FormWindowState.Maximized;
+                //nuevaVentanaStartMenu.Show();
+
+
                 UseCase nuevaVentana = new UseCase();
                 nuevaVentana.MdiParent = this.MdiParent;
                 nuevaVentana.WindowState = FormWindowState.Maximized;

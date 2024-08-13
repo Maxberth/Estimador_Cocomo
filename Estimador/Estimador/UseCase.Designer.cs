@@ -758,7 +758,7 @@
             groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox5.Location = new Point(162, 127);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(646, 296);
+            groupBox5.Size = new Size(729, 296);
             groupBox5.TabIndex = 0;
             groupBox5.TabStop = false;
             groupBox5.Text = "Tablas de Resultados";
@@ -778,7 +778,7 @@
             tb_Resultados_PersonasMeses.Location = new Point(502, 218);
             tb_Resultados_PersonasMeses.Name = "tb_Resultados_PersonasMeses";
             tb_Resultados_PersonasMeses.ReadOnly = true;
-            tb_Resultados_PersonasMeses.Size = new Size(112, 34);
+            tb_Resultados_PersonasMeses.Size = new Size(196, 34);
             tb_Resultados_PersonasMeses.TabIndex = 40;
             // 
             // tb_Resultados_UCP
@@ -787,7 +787,7 @@
             tb_Resultados_UCP.Location = new Point(502, 171);
             tb_Resultados_UCP.Name = "tb_Resultados_UCP";
             tb_Resultados_UCP.ReadOnly = true;
-            tb_Resultados_UCP.Size = new Size(112, 34);
+            tb_Resultados_UCP.Size = new Size(196, 34);
             tb_Resultados_UCP.TabIndex = 39;
             // 
             // tb_Resultados_EF
@@ -796,7 +796,7 @@
             tb_Resultados_EF.Location = new Point(502, 128);
             tb_Resultados_EF.Name = "tb_Resultados_EF";
             tb_Resultados_EF.ReadOnly = true;
-            tb_Resultados_EF.Size = new Size(112, 34);
+            tb_Resultados_EF.Size = new Size(196, 34);
             tb_Resultados_EF.TabIndex = 38;
             // 
             // label29
@@ -804,9 +804,9 @@
             label29.AutoSize = true;
             label29.Location = new Point(41, 224);
             label29.Name = "label29";
-            label29.Size = new Size(287, 28);
+            label29.Size = new Size(270, 28);
             label29.TabIndex = 34;
-            label29.Text = "Esfuerzo Total (Personas-Meses)";
+            label29.Text = "Esfuerzo Total (horas.hombre)";
             // 
             // tb_Resultados_TCF
             // 
@@ -814,7 +814,7 @@
             tb_Resultados_TCF.Location = new Point(502, 84);
             tb_Resultados_TCF.Name = "tb_Resultados_TCF";
             tb_Resultados_TCF.ReadOnly = true;
-            tb_Resultados_TCF.Size = new Size(112, 34);
+            tb_Resultados_TCF.Size = new Size(196, 34);
             tb_Resultados_TCF.TabIndex = 37;
             // 
             // label30
@@ -832,7 +832,7 @@
             tb_Resultados_UUCP.Location = new Point(502, 44);
             tb_Resultados_UUCP.Name = "tb_Resultados_UUCP";
             tb_Resultados_UUCP.ReadOnly = true;
-            tb_Resultados_UUCP.Size = new Size(112, 34);
+            tb_Resultados_UUCP.Size = new Size(196, 34);
             tb_Resultados_UUCP.TabIndex = 36;
             // 
             // label31
