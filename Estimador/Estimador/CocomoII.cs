@@ -43,7 +43,7 @@ namespace Estimador
         {
             InitializeComponent();
 
-            string[] opciones = {"nominal" };
+            string[] opciones = { "nominal" };
 
             ConfigurarComboBox(cb_Rss, opciones);
             ConfigurarComboBox(cb_Tbd, opciones);
@@ -119,30 +119,8 @@ namespace Estimador
             // Obtener valores seleccionados de los ComboBox y calcular costes
 
             ///// Conductores de Costes
-            /*
+  
             //producto
-            double rssCoste = CalcularCoste(cb_Rss.SelectedItem?.ToString(), 0);
-            double tbdCoste = CalcularCoste(cb_Tbd.SelectedItem?.ToString(), 1);
-            double cprCoste = CalcularCoste(cb_Cpr.SelectedItem?.ToString(), 2);
-            double ruseCoste = CalcularCoste(cb_Ruse.SelectedItem?.ToString(), 3);
-            double docCoste = CalcularCoste(cb_Doc.SelectedItem?.ToString(), 4);
-            //plataforma
-            double rteCoste = CalcularCoste(cb_Rte.SelectedItem?.ToString(), 5);
-            double rmpCoste = CalcularCoste(cb_Rmp.SelectedItem?.ToString(), 6);
-            double vmcCoste = CalcularCoste(cb_Vmc.SelectedItem?.ToString(), 7);
-            //personal
-            double canCoste = CalcularCoste(cb_Can.SelectedItem?.ToString(), 8);
-            double eaplCoste = CalcularCoste(cb_Eapl.SelectedItem?.ToString(), 9);
-            double cproCoste = CalcularCoste(cb_Cpro.SelectedItem?.ToString(), 10);
-            double cperCoste = CalcularCoste(cb_Cper.SelectedItem?.ToString(), 11);
-            double eplaCoste = CalcularCoste(cb_Epla.SelectedItem?.ToString(), 12);
-            double elpCoste = CalcularCoste(cb_Elp.SelectedItem?.ToString(), 13);
-            //proyecto
-            double uhsCoste = CalcularCoste(cb_Uhs.SelectedItem?.ToString(), 14);
-            double rplCoste = CalcularCoste(cb_Rpl.SelectedItem?.ToString(), 15);
-            double dmsCoste = CalcularCoste(cb_Dms.SelectedItem?.ToString(), 16);
-            ///// Conductores de Costes
-            */
             double rssCoste = CalcularCoste(cb_Rss.SelectedItem?.ToString() ?? "1", 0);
             double tbdCoste = CalcularCoste(cb_Tbd.SelectedItem?.ToString() ?? "1", 1);
             double cprCoste = CalcularCoste(cb_Cpr.SelectedItem?.ToString() ?? "1", 2);
@@ -169,13 +147,7 @@ namespace Estimador
             //
 
             ///// Conductores de Escala
-            /*
-            double precEscala = CalcularCoste(cb_Prec.SelectedItem?.ToString(), 17);
-            double flexEscala = CalcularCoste(cb_Flex.SelectedItem?.ToString(), 18);
-            double reslEscala = CalcularCoste(cb_Resl.SelectedItem?.ToString(), 19);
-            double teamEscala = CalcularCoste(cb_Team.SelectedItem?.ToString(), 20);
-            double pmatEscala = CalcularCoste(cb_Pmat.SelectedItem?.ToString(), 21);
-            */
+
             double precEscala = CalcularCoste(cb_Prec.SelectedItem?.ToString() ?? "3.72", 17);
             double flexEscala = CalcularCoste(cb_Flex.SelectedItem?.ToString() ?? "3.04", 18);
             double reslEscala = CalcularCoste(cb_Resl.SelectedItem?.ToString() ?? "4.24", 19);
@@ -192,7 +164,7 @@ namespace Estimador
             //MessageBox.Show($"Conductor de Coste Total: {conductor_total}");
 
             conductor_escala_total = precEscala + flexEscala + reslEscala + teamEscala + pmatEscala;
-           // MessageBox.Show($"Conductor de Escala Total: {conductor_escala_total}");
+            // MessageBox.Show($"Conductor de Escala Total: {conductor_escala_total}");
 
         }
 
@@ -456,9 +428,9 @@ namespace Estimador
 
             double division_escala = conductor_escala_total / 100;
 
-            esfuerzoFinal = 2.94f * conductor_total* Math.Pow(kldc, (0.91+division_escala)) ;
+            esfuerzoFinal = 2.94f * conductor_total * Math.Pow(kldc, (0.91 + division_escala));
             totalEsfuerzo_txt.Text = Math.Round(esfuerzoFinal, 2).ToString("F2");
-            tiempoFinal = 3.67f * Math.Pow(esfuerzoFinal, 0.28+(0.8*division_escala));
+            tiempoFinal = 3.67f * Math.Pow(esfuerzoFinal, 0.28 + (0.8 * division_escala));
             totalTdesarrollo_txt.Text = Math.Round(tiempoFinal, 2).ToString("F2");
             costo_total = esfuerzoFinal * cpm_total;
             totalCpm_txt.Text = Math.Round(costo_total, 2).ToString("F2");
@@ -486,6 +458,11 @@ namespace Estimador
             elaboracion_Cpm_txt.Text = Math.Round(costoFinalElaboracion, 2).ToString("F2");
             construccion_Cpm_txt.Text = Math.Round(costoFinalConstruccion, 2).ToString("F2");
             transicion_Cpm_txt.Text = Math.Round(costoFinalTransicion, 2).ToString("F2");
+        }
+
+        private void CocomoII_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

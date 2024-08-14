@@ -1974,6 +1974,7 @@
             Controls.Add(tabControl1);
             Name = "CocomoII";
             Text = "CocomoII";
+            Load += CocomoII_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

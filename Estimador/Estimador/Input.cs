@@ -92,7 +92,6 @@ namespace Estimador
                 gbAjustepf.Visible = true;
                 kldc = PuntosFuncionTotal;
                 //MessageBox.Show(Convert.ToString(kldc));
-                //falta igualar la variable
             }
         }
         //----
@@ -110,100 +109,7 @@ namespace Estimador
         {
             //ModoDesarrollo();
         }
-        /*
-        private void CalcularPuntosFuncion(object sender, EventArgs e)
-        {
-            int eb = TryParseOrDefault(textBox3.Text) * 3;
-            int em = TryParseOrDefault(textBox4.Text) * 4;
-            int ea = TryParseOrDefault(textBox5.Text) * 6;
-
-            int sb = TryParseOrDefault(textBox6.Text) * 4;
-            int sm = TryParseOrDefault(textBox7.Text) * 5;
-            int sa = TryParseOrDefault(textBox8.Text) * 7;
-
-            int cb = TryParseOrDefault(textBox9.Text) * 3;
-            int cm = TryParseOrDefault(textBox10.Text) * 4;
-            int ca = TryParseOrDefault(textBox11.Text) * 6;
-
-            int ab = TryParseOrDefault(textBox12.Text) * 7;
-            int am = TryParseOrDefault(textBox13.Text) * 10;
-            int aa = TryParseOrDefault(textBox14.Text) * 15;
-
-            int ib = TryParseOrDefault(textBox15.Text) * 5;
-            int im = TryParseOrDefault(textBox16.Text) * 7;
-            int ia = TryParseOrDefault(textBox17.Text) * 10;
-
-            PuntosFuncionTotal = eb + em + ea + sb + sm + sa + cb + cm + ca + ab + am + aa + ib + im + ia;
-            int sumasloc = PuntosFuncionTotal;
-            // Mostrar el resultado en puntosfunciontotal_txt
-            sloc_txt.Text = sumasloc.ToString();
-
-            // Multiplicar por el valor seleccionado del ComboBox
-            int selectedIndex = lenguaje_cbb.SelectedIndex;
-            int valorMultiplicador = 0;
-
-            switch (selectedIndex)
-            {
-                case 0: // Java
-                    valorMultiplicador = 53;
-                    break;
-                case 1: // Fortran 77
-                    valorMultiplicador = 105;
-                    break;
-                case 2: // Pascal
-                    valorMultiplicador = 91;
-                    break;
-                case 3: // Prolog
-                    valorMultiplicador = 64;
-                    break;
-                case 4: // Ensamblador
-                    valorMultiplicador = 320;
-                    break;
-                case 5: // C++
-                    valorMultiplicador = 29;
-                    break;
-                case 6: // C
-                    valorMultiplicador = 128;
-                    break;
-                default:
-                    valorMultiplicador = 0; // Manejar cualquier otro caso si es necesario
-                    break;
-            }
-
-            //
-            if (otro_chb.Checked)
-            {
-                // Asegúrate de que el texto del TextBox se pueda convertir a un número
-                if (double.TryParse(multiplicador_txt.Text, out double factor))
-                {
-                    // El valor ha sido guardado correctamente en la variable factor
-                    //MessageBox.Show("Factor guardado: " + factor);
-                }
-                else
-                {
-                    // Maneja el caso en que la conversión falla
-                    MessageBox.Show("Por favor, ingrese un número válido.");
-                }
-            }
-            //
-            // Multiplicar PuntosFuncionTotal por valorMultiplicador
-            PuntosFuncionTotal *= valorMultiplicador;
-            PuntosFuncionTotal = PuntosFuncionTotal / 1000;
-            // Mostrar el resultado en puntosfunciontotal_txt
-            puntosfunciontotal_txt.Text = PuntosFuncionTotal.ToString();
-            kldc = PuntosFuncionTotal;
-            //MessageBox.Show(kldc.ToString());
-
-        }
-        
-        private int TryParseOrDefault(string text)
-        {
-            if (int.TryParse(text, out int result))
-            {
-                return result;
-            }
-            return 0;
-        }*/
+       
         private void CalcularPuntosFuncion(object sender, EventArgs e)
         {
             int eb = TryParseOrDefault(textBox3.Text) * 3;
@@ -268,7 +174,7 @@ namespace Estimador
                         valorMultiplicador = 128;
                         break;
                     default:
-                        valorMultiplicador = 0; // Manejar cualquier otro caso si es necesario
+                        valorMultiplicador = 0; // 
                         break;
                 }
             }
@@ -282,7 +188,7 @@ namespace Estimador
             //MessageBox.Show(kldc.ToString());
         }
 
-        // Función auxiliar para intentar convertir el texto a entero o devolver un valor por defecto
+        // Función auxiliar para convertir el texto a entero o devolver un valor por defecto
         private int TryParseOrDefault(string text)
         {
             int result;
@@ -496,9 +402,8 @@ namespace Estimador
             double totalCoste = rssCoste * tbdCoste * cprCoste * rteCoste * rmpCoste * vmcCoste * trcCoste * canCoste * eanCoste * cproCoste * esoCoste * elpCoste * utpCoste * uhsCoste * rplCoste;
             conductor_total = totalCoste;
             //MessageBox.Show($"Total Coste: {totalCoste}");
-            DefinirTipoProyecto();//cargue primero para que se asigne prederteminadamente moderado
+            DefinirTipoProyecto();//cargar primero para que se asigne prederteminadamente moderado
             //MessageBox.Show(tipoProyecto);
-            // Aquí puedes usar los costes calculados como lo necesites
         }
 
 
@@ -673,12 +578,7 @@ namespace Estimador
         private void button2_Click(object sender, EventArgs e)
 
         {
-            /*
-            double inicio_costo = TryParseOrDefault(textBox1.Text) * peso_Esfuerzo_Inicio * esfuerzoFinal;
-            double elaboracion_costo = TryParseOrDefault(textBox2.Text) * peso_Esfuerzo_Elaboracion * esfuerzoFinal;
-            double contruccion_costo = TryParseOrDefault(textBox18.Text) * peso_Esfuerzo_Construccion * esfuerzoFinal;
-            double transicion_costo = TryParseOrDefault(textBox19.Text) * peso_Esfuerzo_Transicion * esfuerzoFinal;
-            */
+
             double inicio_costo = TryParseOrDefault(textBox1.Text) * peso_Esfuerzo_Inicio;
             double elaboracion_costo = TryParseOrDefault(textBox2.Text) * peso_Esfuerzo_Elaboracion;
             double contruccion_costo = TryParseOrDefault(textBox18.Text) * peso_Esfuerzo_Construccion;
@@ -899,10 +799,7 @@ namespace Estimador
 
         private void otro_chb_CheckedChanged(object sender, EventArgs e)
         {
-            ///
-            //lenguaje_cbb
-            // acabar
-            ///
+
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)

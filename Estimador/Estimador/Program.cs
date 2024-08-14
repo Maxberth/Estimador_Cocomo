@@ -3,7 +3,7 @@ namespace Estimador
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        ///  Hecho por Vigo Saldaña Alberth Jesus
         /// </summary>
         [STAThread]
         static void Main()
