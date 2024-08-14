@@ -89,10 +89,10 @@ namespace Estimador
 
             double EF_familiaridad = EF_F1 * 1.5; //F1
             double EF_experienciaAPP = EF_F2 * 0.5; //F2
-            double EF_estabilidadRequisitos = EF_F3 * 1; //F3
+            double EF_estabilidadRequisitos = EF_F3 * 2; //F3
             double EF_experienciaLenguaje = EF_F4 * 0.5;//F4
             double EF_herramientasSoporte = EF_F5 * 1;//F5
-            double EF_motivacionEquipo = EF_F6 * 2;//F6
+            double EF_motivacionEquipo = EF_F6 * 1;//F6
             double EF_restriccionesTiempo= EF_F7 * -1;//F7
             double EF_restriccionesRecursos = EF_F8 * -1;//F8
 

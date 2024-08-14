@@ -46,6 +46,9 @@
             ayudaEnLineaToolStripMenuItem = new ToolStripMenuItem();
             manualDeUsuarioToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
+            cocomoIntermedioToolStripMenuItem = new ToolStripMenuItem();
+            cocomoIIToolStripMenuItem = new ToolStripMenuItem();
+            casosDeUsoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -112,8 +115,9 @@
             // 
             // ecuacionesToolStripMenuItem
             // 
+            ecuacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cocomoIntermedioToolStripMenuItem, cocomoIIToolStripMenuItem, casosDeUsoToolStripMenuItem });
             ecuacionesToolStripMenuItem.Name = "ecuacionesToolStripMenuItem";
-            ecuacionesToolStripMenuItem.Size = new Size(165, 26);
+            ecuacionesToolStripMenuItem.Size = new Size(224, 26);
             ecuacionesToolStripMenuItem.Text = "Ecuaciones";
             ecuacionesToolStripMenuItem.Click += ecuacionesToolStripMenuItem_Click;
             // 
@@ -146,21 +150,42 @@
             // ayudaEnLineaToolStripMenuItem
             // 
             ayudaEnLineaToolStripMenuItem.Name = "ayudaEnLineaToolStripMenuItem";
-            ayudaEnLineaToolStripMenuItem.Size = new Size(224, 26);
+            ayudaEnLineaToolStripMenuItem.Size = new Size(214, 26);
             ayudaEnLineaToolStripMenuItem.Text = "Ayuda en linea";
             ayudaEnLineaToolStripMenuItem.Click += ayudaEnLineaToolStripMenuItem_Click;
             // 
             // manualDeUsuarioToolStripMenuItem
             // 
             manualDeUsuarioToolStripMenuItem.Name = "manualDeUsuarioToolStripMenuItem";
-            manualDeUsuarioToolStripMenuItem.Size = new Size(224, 26);
+            manualDeUsuarioToolStripMenuItem.Size = new Size(214, 26);
             manualDeUsuarioToolStripMenuItem.Text = "Manual de usuario";
             // 
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            acercaDeToolStripMenuItem.Size = new Size(224, 26);
+            acercaDeToolStripMenuItem.Size = new Size(214, 26);
             acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // cocomoIntermedioToolStripMenuItem
+            // 
+            cocomoIntermedioToolStripMenuItem.Name = "cocomoIntermedioToolStripMenuItem";
+            cocomoIntermedioToolStripMenuItem.Size = new Size(225, 26);
+            cocomoIntermedioToolStripMenuItem.Text = "Cocomo Intermedio";
+            cocomoIntermedioToolStripMenuItem.Click += cocomoIntermedioToolStripMenuItem_Click;
+            // 
+            // cocomoIIToolStripMenuItem
+            // 
+            cocomoIIToolStripMenuItem.Name = "cocomoIIToolStripMenuItem";
+            cocomoIIToolStripMenuItem.Size = new Size(225, 26);
+            cocomoIIToolStripMenuItem.Text = "Cocomo II";
+            cocomoIIToolStripMenuItem.Click += cocomoIIToolStripMenuItem_Click;
+            // 
+            // casosDeUsoToolStripMenuItem
+            // 
+            casosDeUsoToolStripMenuItem.Name = "casosDeUsoToolStripMenuItem";
+            casosDeUsoToolStripMenuItem.Size = new Size(225, 26);
+            casosDeUsoToolStripMenuItem.Text = "Casos de Uso";
+            casosDeUsoToolStripMenuItem.Click += casosDeUsoToolStripMenuItem_Click;
             // 
             // StartMenu
             // 
@@ -199,5 +224,8 @@
         private ToolStripMenuItem ayudaEnLineaToolStripMenuItem;
         private ToolStripMenuItem manualDeUsuarioToolStripMenuItem;
         private ToolStripMenuItem acercaDeToolStripMenuItem;
+        private ToolStripMenuItem cocomoIntermedioToolStripMenuItem;
+        private ToolStripMenuItem cocomoIIToolStripMenuItem;
+        private ToolStripMenuItem casosDeUsoToolStripMenuItem;
     }
 }
